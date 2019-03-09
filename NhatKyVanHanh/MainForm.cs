@@ -24,6 +24,8 @@ namespace NhatKyVanHanh
         public MainForm()
         {
             InitializeComponent();
+            DBKetNoi xldb = new DBKetNoi();
+            xldb.CreateDatabaseIfNotExisted();
             initMain();
         }
 

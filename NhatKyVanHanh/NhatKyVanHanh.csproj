@@ -11,6 +11,7 @@
     <AssemblyName>NhatKyVanHanh</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>C:\Users\admin\Desktop\RELEASESW\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <AutorunEnabled>true</AutorunEnabled>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -48,8 +48,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -65,11 +68,22 @@
     <Compile Include="AllObjects\CongViec.cs" />
     <Compile Include="AllObjects\Kip.cs" />
     <Compile Include="AllObjects\NhanVien.cs" />
+    <Compile Include="ca.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ca.xsd</DependentUpon>
+    </Compile>
     <Compile Include="GUI\NhatKy.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\NhatKy.Designer.cs">
       <DependentUpon>NhatKy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\report.Designer.cs">
+      <DependentUpon>report.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\SQLMining.cs">
       <SubType>Form</SubType>
@@ -89,6 +103,11 @@
     <Compile Include="GUI\NhatKyVaBaoCao.Designer.cs">
       <DependentUpon>NhatKyVaBaoCao.cs</DependentUpon>
     </Compile>
+    <Compile Include="kip.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>kip.xsd</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +125,10 @@
     <EmbeddedResource Include="GUI\NhatKy.resx">
       <DependentUpon>NhatKy.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\report.resx">
+      <DependentUpon>report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Report1.rdlc" />
     <EmbeddedResource Include="GUI\SQLMining.resx">
       <DependentUpon>SQLMining.cs</DependentUpon>
     </EmbeddedResource>
@@ -128,6 +151,29 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="app.config" />
+    <None Include="ca.xsc">
+      <DependentUpon>ca.xsd</DependentUpon>
+    </None>
+    <None Include="ca.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ca.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ca.xss">
+      <DependentUpon>ca.xsd</DependentUpon>
+    </None>
+    <None Include="kip.xsc">
+      <DependentUpon>kip.xsd</DependentUpon>
+    </None>
+    <None Include="kip.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>kip.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="kip.xss">
+      <DependentUpon>kip.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
